@@ -70,8 +70,8 @@ class InventoryApp {
     // Open add item modal
     openAddItemModal() {
         this.currentEditId = null;
-        document.getElementById('modalTitle').textContent = 'Add New Item';
-        document.getElementById('saveItemBtn').textContent = 'Save Item';
+        document.getElementById('modalTitle').textContent = '新規アイテム追加';
+        document.getElementById('saveItemBtn').textContent = 'アイテムを保存';
         this.resetForm();
         this.showModal('itemModal');
     }
@@ -82,8 +82,8 @@ class InventoryApp {
         if (!item) return;
 
         this.currentEditId = id;
-        document.getElementById('modalTitle').textContent = 'Edit Item';
-        document.getElementById('saveItemBtn').textContent = 'Update Item';
+        document.getElementById('modalTitle').textContent = 'アイテム編集';
+        document.getElementById('saveItemBtn').textContent = 'アイテムを更新';
         
         // Populate form with item data
         document.getElementById('itemName').value = item.name;
@@ -173,27 +173,27 @@ class InventoryApp {
     // Validate item data
     validateItemData(data) {
         if (!data.name) {
-            this.showToast('Please enter an item name', 'error');
+            this.showToast('アイテム名を入力してください', 'error');
             return false;
         }
 
         if (!data.sku) {
-            this.showToast('Please enter a SKU', 'error');
+            this.showToast('SKUを入力してください', 'error');
             return false;
         }
 
         if (!data.category) {
-            this.showToast('Please select a category', 'error');
+            this.showToast('カテゴリを選択してください', 'error');
             return false;
         }
 
         if (data.quantity < 0) {
-            this.showToast('Quantity cannot be negative', 'error');
+            this.showToast('数量は負の値にできません', 'error');
             return false;
         }
 
         if (data.price < 0) {
-            this.showToast('Price cannot be negative', 'error');
+            this.showToast('価格は負の値にできません', 'error');
             return false;
         }
 
@@ -204,7 +204,7 @@ class InventoryApp {
         );
 
         if (existingItem) {
-            this.showToast('SKU already exists', 'error');
+            this.showToast('SKUがすでに存在します', 'error');
             return false;
         }
 
@@ -225,7 +225,7 @@ class InventoryApp {
         this.renderInventory();
         this.updateStats();
         this.closeItemModal();
-        this.showToast('Item added successfully', 'success');
+        this.showToast('アイテムが正常に追加されました', 'success');
     }
 
     // Update existing item
@@ -243,7 +243,7 @@ class InventoryApp {
         this.renderInventory();
         this.updateStats();
         this.closeItemModal();
-        this.showToast('Item updated successfully', 'success');
+        this.showToast('アイテムが正常に更新されました', 'success');
     }
 
     // Confirm delete
@@ -260,7 +260,7 @@ class InventoryApp {
         this.renderInventory();
         this.updateStats();
         this.closeDeleteModal();
-        this.showToast(`"${itemName}" deleted successfully`, 'success');
+        this.showToast(`"${itemName}" が正常に削除されました`, 'success');
     }
 
     // Get stock status
@@ -273,18 +273,18 @@ class InventoryApp {
     // Get status display text
     getStatusText(status) {
         switch (status) {
-            case 'in-stock': return 'In Stock';
-            case 'low-stock': return 'Low Stock';
-            case 'out-of-stock': return 'Out of Stock';
-            default: return 'Unknown';
+            case 'in-stock': return '在庫あり';
+            case 'low-stock': return '在庫不足';
+            case 'out-of-stock': return '在庫切れ';
+            default: return '不明';
         }
     }
 
     // Format currency
     formatCurrency(amount) {
-        return new Intl.NumberFormat('en-US', {
+        return new Intl.NumberFormat('ja-JP', {
             style: 'currency',
-            currency: 'USD'
+            currency: 'JPY'
         }).format(amount);
     }
 
@@ -463,7 +463,7 @@ class InventoryApp {
             localStorage.setItem('inventoryData', JSON.stringify(this.inventory));
         } catch (error) {
             console.error('Failed to save to localStorage:', error);
-            this.showToast('Failed to save data', 'error');
+            this.showToast('データの保存に失敗しました', 'error');
         }
     }
 
@@ -489,7 +489,7 @@ class InventoryApp {
         link.click();
         
         URL.revokeObjectURL(url);
-        this.showToast('Data exported successfully', 'success');
+        this.showToast('データが正常にエクスポートされました', 'success');
     }
 
     // Import data
@@ -503,12 +503,12 @@ class InventoryApp {
                     this.saveToStorage();
                     this.renderInventory();
                     this.updateStats();
-                    this.showToast('Data imported successfully', 'success');
+                    this.showToast('データが正常にインポートされました', 'success');
                 } else {
-                    this.showToast('Invalid file format', 'error');
+                    this.showToast('無効なファイル形式です', 'error');
                 }
             } catch (error) {
-                this.showToast('Failed to import data', 'error');
+                this.showToast('データのインポートに失敗しました', 'error');
             }
         };
         reader.readAsText(file);
@@ -519,37 +519,37 @@ class InventoryApp {
         const sampleItems = [
             {
                 id: this.generateId(),
-                name: 'Wireless Bluetooth Headphones',
+                name: 'ワイヤレスBluetoothヘッドホン',
                 sku: 'WIR-EL-001',
                 category: 'Electronics',
                 quantity: 25,
-                price: 79.99,
+                price: 7999,
                 minStock: 5,
-                description: 'High-quality wireless headphones with noise cancellation',
+                description: 'ノイズキャンセリング機能付きの高品質ワイヤレスヘッドホン',
                 dateAdded: new Date().toISOString(),
                 lastUpdated: new Date().toISOString()
             },
             {
                 id: this.generateId(),
-                name: 'Cotton T-Shirt',
+                name: 'コットンTシャツ',
                 sku: 'COT-CL-002',
                 category: 'Clothing',
                 quantity: 3,
-                price: 19.99,
+                price: 1999,
                 minStock: 10,
-                description: '100% cotton, available in multiple colors',
+                description: '100%コットン、複数のカラーバリエーション有り',
                 dateAdded: new Date().toISOString(),
                 lastUpdated: new Date().toISOString()
             },
             {
                 id: this.generateId(),
-                name: 'JavaScript Programming Guide',
+                name: 'JavaScriptプログラミングガイド',
                 sku: 'JAV-BO-003',
                 category: 'Books',
                 quantity: 0,
-                price: 39.99,
+                price: 3999,
                 minStock: 5,
-                description: 'Comprehensive guide to modern JavaScript development',
+                description: '最新のJavaScript開発に関する包括的なガイド',
                 dateAdded: new Date().toISOString(),
                 lastUpdated: new Date().toISOString()
             }
@@ -559,7 +559,7 @@ class InventoryApp {
         this.saveToStorage();
         this.renderInventory();
         this.updateStats();
-        this.showToast('Sample data added', 'success');
+        this.showToast('サンプルデータが追加されました', 'success');
     }
 }
 

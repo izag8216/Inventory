@@ -1,142 +1,142 @@
-# 📦 Inventory - Professional Stock Management System
+# 📦 在庫管理 - プロフェッショナル在庫管理システム
 
-A modern, responsive inventory management application built with vanilla HTML, CSS, and JavaScript. Features a clean, minimalist design with comprehensive stock tracking capabilities.
+バニラHTML、CSS、JavaScriptで構築された、モダンでレスポンシブな在庫管理アプリケーション。包括的な在庫追跡機能を備えたクリーンでミニマリストなデザインが特徴です。
 
-![Inventory App](https://img.shields.io/badge/Version-1.0.0-blue.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
-![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen.svg)
+![在庫管理アプリ](https://img.shields.io/badge/Version-1.0.0-blue.svg)
+![ライセンス](https://img.shields.io/badge/License-MIT-green.svg)
+![ビルド状況](https://img.shields.io/badge/Build-Passing-brightgreen.svg)
 
-## ✨ Features
+## ✨ 機能
 
-### 📊 **Core Functionality**
-- **Complete CRUD Operations** - Add, view, edit, and delete inventory items
-- **Real-time Search** - Instant search across item names, SKUs, categories, and descriptions
-- **Advanced Filtering** - Filter by category and stock status
-- **Stock Level Monitoring** - Automatic low stock and out-of-stock alerts
-- **Financial Tracking** - Real-time total inventory value calculation
+### 📊 **コア機能**
+- **完全なCRUD操作** - 在庫アイテムの追加、表示、編集、削除
+- **リアルタイム検索** - アイテム名、SKU、カテゴリ、説明での即座の検索
+- **高度なフィルタリング** - カテゴリと在庫状況でのフィルタリング
+- **在庫レベル監視** - 在庫不足および在庫切れの自動アラート
+- **財務追跡** - リアルタイムでの総在庫価値計算
 
-### 🎨 **User Experience**
-- **Responsive Design** - Optimized for desktop, tablet, and mobile devices
-- **Modern UI** - Clean, professional interface with smooth animations
-- **Keyboard Shortcuts** - Efficient navigation with hotkeys
-- **Toast Notifications** - Real-time feedback for all user actions
-- **Empty State Handling** - Intuitive guidance for new users
+### 🎨 **ユーザーエクスペリエンス**
+- **レスポンシブデザイン** - デスクトップ、タブレット、モバイルデバイス最適化
+- **モダンUI** - スムーズなアニメーション付きのクリーンでプロフェッショナルなインターフェース
+- **キーボードショートカット** - ホットキーによる効率的なナビゲーション
+- **トースト通知** - すべてのユーザーアクションに対するリアルタイムフィードバック
+- **空状態処理** - 新規ユーザーへの直感的なガイダンス
 
-### 💾 **Data Management**
-- **Local Storage** - Automatic data persistence in browser
-- **Data Validation** - Comprehensive input validation and error handling
-- **Export/Import** - JSON data export and import capabilities
-- **Sample Data** - Optional demo data for testing
+### 💾 **データ管理**
+- **ローカルストレージ** - ブラウザでの自動データ永続化
+- **データ検証** - 包括的な入力検証とエラーハンドリング
+- **エクスポート/インポート** - JSONデータのエクスポートおよびインポート機能
+- **サンプルデータ** - テスト用のオプションデモデータ
 
-### 🔧 **Technical Features**
-- **Vanilla JavaScript** - No external dependencies
-- **ES6+ Syntax** - Modern JavaScript features
-- **CSS Grid & Flexbox** - Advanced layout techniques
-- **Progressive Enhancement** - Works without JavaScript for basic functionality
-- **Accessibility** - WCAG compliant with proper ARIA labels
+### 🔧 **技術的特徴**
+- **バニラJavaScript** - 外部依存関係なし
+- **ES6+構文** - モダンJavaScript機能
+- **CSS Grid & Flexbox** - 高度なレイアウト技術
+- **プログレッシブエンハンスメント** - JavaScript無しでも基本機能が動作
+- **アクセシビリティ** - 適切なARIAラベルでWCAG準拠
 
-## 🚀 Quick Start
+## 🚀 クイックスタート
 
-### Prerequisites
-- Modern web browser (Chrome, Firefox, Safari, Edge)
-- Local web server (optional, for development)
+### 前提条件
+- モダンWebブラウザ（Chrome、Firefox、Safari、Edge）
+- ローカルWebサーバー（開発用、オプション）
 
-### Installation
+### インストール
 
-1. **Clone the repository**
+1. **リポジトリをクローン**
    ```bash
    git clone https://github.com/yourusername/inventory.git
    cd inventory
    ```
 
-2. **Open the application**
-   - **Option A**: Open `index.html` directly in your browser
-   - **Option B**: Use a local server (recommended)
+2. **アプリケーションを開く**
+   - **オプションA**: ブラウザで`index.html`を直接開く
+   - **オプションB**: ローカルサーバーを使用（推奨）
      ```bash
-     # Using Python
+     # Pythonを使用
      python -m http.server 8000
      
-     # Using Node.js
+     # Node.jsを使用
      npx serve .
      
-     # Using PHP
+     # PHPを使用
      php -S localhost:8000
      ```
 
-3. **Access the application**
-   - Direct: `file:///path/to/index.html`
-   - Server: `http://localhost:8000`
+3. **アプリケーションにアクセス**
+   - 直接: `file:///path/to/index.html`
+   - サーバー: `http://localhost:8000`
 
-## 📱 Usage Guide
+## 📱 使用ガイド
 
-### Adding Items
-1. Click the **"Add Item"** button or use `Ctrl+N`
-2. Fill in the required fields:
-   - **Item Name** - Product name
-   - **SKU** - Stock Keeping Unit (unique identifier)
-   - **Category** - Product category
-   - **Quantity** - Current stock level
-   - **Unit Price** - Price per item
-   - **Minimum Stock** - Low stock threshold
-   - **Description** - Optional item details
-3. Click **"Save Item"** to add to inventory
+### アイテムの追加
+1. **「アイテム追加」**ボタンをクリックまたは`Ctrl+N`を使用
+2. 必須フィールドを入力:
+   - **アイテム名** - 商品名
+   - **SKU** - 在庫管理単位（固有識別子）
+   - **カテゴリ** - 商品カテゴリ
+   - **数量** - 現在の在庫レベル
+   - **単価** - アイテムあたりの価格
+   - **最小在庫** - 在庫不足しきい値
+   - **説明** - オプションのアイテム詳細
+3. **「アイテムを保存」**をクリックして在庫に追加
 
-### Managing Inventory
-- **Search**: Use the search bar to find items by name, SKU, or category
-- **Filter**: Use dropdown filters for category and stock status
-- **Edit**: Click the edit icon (✏️) to modify item details
-- **Delete**: Click the delete icon (🗑️) to remove items
-- **View Stats**: Monitor total items, low stock alerts, and total value in the header
+### 在庫管理
+- **検索**: 検索バーを使用してアイテム名、SKU、カテゴリでアイテムを検索
+- **フィルタ**: カテゴリと在庫状況のドロップダウンフィルタを使用
+- **編集**: 編集アイコン（✏️）をクリックしてアイテム詳細を変更
+- **削除**: 削除アイコン（🗑️）をクリックしてアイテムを削除
+- **統計表示**: ヘッダーで総アイテム数、在庫不足アラート、総価値を監視
 
-### Keyboard Shortcuts
-- `Ctrl+N` - Add new item
-- `Escape` - Close modals
-- `Enter` - Submit forms
-- `Tab` - Navigate between form fields
+### キーボードショートカット
+- `Ctrl+N` - 新しいアイテムを追加
+- `Escape` - モーダルを閉じる
+- `Enter` - フォームを送信
+- `Tab` - フォームフィールド間を移動
 
-## 🏗️ Project Structure
+## 🏗️ プロジェクト構造
 
 ```
 inventory/
-├── index.html          # Main HTML structure
-├── style.css           # Comprehensive styling
-├── app.js              # Application logic
-├── README.md           # Documentation
-└── assets/             # Images and icons (optional)
+├── index.html          # メインHTML構造
+├── style.css           # 包括的なスタイリング
+├── app.js              # アプリケーションロジック
+├── README.md           # ドキュメント
+└── assets/             # 画像とアイコン（オプション）
 ```
 
-## 🎨 Design System
+## 🎨 デザインシステム
 
-### Color Palette
-- **Primary**: `#2563eb` (Blue)
-- **Success**: `#10b981` (Green)
-- **Warning**: `#f59e0b` (Amber)
-- **Danger**: `#ef4444` (Red)
-- **Background**: `#f8fafc` (Light Gray)
-- **Surface**: `#ffffff` (White)
+### カラーパレット
+- **プライマリ**: `#2563eb`（ブルー）
+- **成功**: `#10b981`（グリーン）
+- **警告**: `#f59e0b`（アンバー）
+- **危険**: `#ef4444`（レッド）
+- **背景**: `#f8fafc`（ライトグレー）
+- **サーフェス**: `#ffffff`（ホワイト）
 
-### Typography
-- **Font Family**: Inter, system fonts
-- **Weights**: 300, 400, 500, 600, 700
-- **Responsive scaling** with proper line heights
+### タイポグラフィ
+- **フォントファミリー**: Inter、システムフォント
+- **ウェイト**: 300、400、500、600、700
+- **適切な行間でのレスポンシブスケーリング**
 
-### Components
-- **Buttons**: Multiple variants (primary, secondary, danger)
-- **Forms**: Consistent styling with focus states
-- **Modals**: Smooth animations and backdrop
-- **Tables**: Responsive with hover effects
-- **Status Badges**: Color-coded stock indicators
+### コンポーネント
+- **ボタン**: 複数のバリアント（プライマリ、セカンダリ、危険）
+- **フォーム**: フォーカス状態での一貫したスタイリング
+- **モーダル**: スムーズなアニメーションと背景
+- **テーブル**: ホバー効果付きのレスポンシブ
+- **ステータスバッジ**: カラーコード化された在庫インジケーター
 
-## 🔧 Customization
+## 🔧 カスタマイズ
 
-### Adding New Categories
-Edit the category options in both `index.html` files:
+### 新しいカテゴリの追加
+`index.html`ファイルでカテゴリオプションを編集:
 ```html
-<option value="YourCategory">Your Category</option>
+<option value="YourCategory">あなたのカテゴリ</option>
 ```
 
-### Modifying Stock Thresholds
-Adjust the stock status logic in `app.js`:
+### 在庫しきい値の変更
+`app.js`で在庫状況ロジックを調整:
 ```javascript
 getStockStatus(quantity, minStock) {
     if (quantity === 0) return 'out-of-stock';
@@ -145,56 +145,56 @@ getStockStatus(quantity, minStock) {
 }
 ```
 
-### Styling Changes
-Modify CSS custom properties in `style.css`:
+### スタイルの変更
+`style.css`でCSSカスタムプロパティを変更:
 ```css
 :root {
     --primary-color: #your-color;
     --spacing-md: 1rem;
-    /* ... other variables */
+    /* ... その他の変数 */
 }
 ```
 
-## 📊 Data Format
+## 📊 データ形式
 
-Items are stored in the following JSON format:
+アイテムは以下のJSON形式で保存されます:
 ```json
 {
     "id": "unique-identifier",
-    "name": "Product Name",
+    "name": "商品名",
     "sku": "PROD-SKU-001",
     "category": "Electronics",
     "quantity": 50,
-    "price": 29.99,
+    "price": 2999,
     "minStock": 10,
-    "description": "Product description",
+    "description": "商品説明",
     "dateAdded": "2024-01-01T00:00:00.000Z",
     "lastUpdated": "2024-01-01T00:00:00.000Z"
 }
 ```
 
-## 🌐 Browser Support
+## 🌐 ブラウザサポート
 
-| Browser | Version |
-|---------|---------|
-| Chrome  | 60+     |
-| Firefox | 55+     |
-| Safari  | 12+     |
-| Edge    | 79+     |
+| ブラウザ | バージョン |
+|---------|-----------|
+| Chrome  | 60+       |
+| Firefox | 55+       |
+| Safari  | 12+       |
+| Edge    | 79+       |
 
-## 🚀 Deployment
+## 🚀 デプロイメント
 
 ### GitHub Pages
-1. Push code to GitHub repository
-2. Go to Settings → Pages
-3. Select source branch (main)
-4. Access at `https://yourusername.github.io/inventory`
+1. GitHubリポジトリにコードをプッシュ
+2. 設定 → Pagesに移動
+3. ソースブランチ（main）を選択
+4. `https://yourusername.github.io/inventory`でアクセス
 
 ### Netlify
-1. Connect GitHub repository
-2. Build command: (none needed)
-3. Publish directory: `/`
-4. Deploy automatically on push
+1. GitHubリポジトリを接続
+2. ビルドコマンド: （不要）
+3. 公開ディレクトリ: `/`
+4. プッシュ時に自動デプロイ
 
 ### Vercel
 ```bash
@@ -202,59 +202,59 @@ npm i -g vercel
 vercel --prod
 ```
 
-## 🔒 Security Considerations
+## 🔒 セキュリティ考慮事項
 
-- **XSS Prevention**: All user inputs are properly escaped
-- **Data Validation**: Client-side validation for all forms
-- **Local Storage**: Data stored locally, no server transmission
-- **No External Dependencies**: Reduced attack surface
+- **XSS防止**: すべてのユーザー入力が適切にエスケープされています
+- **データ検証**: すべてのフォームでクライアントサイド検証
+- **ローカルストレージ**: データはローカルに保存され、サーバーに送信されません
+- **外部依存関係なし**: 攻撃面の削減
 
-## 🤝 Contributing
+## 🤝 貢献
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit changes (`git commit -m 'Add amazing feature'`)
-4. Push to branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+1. リポジトリをフォーク
+2. フィーチャーブランチを作成（`git checkout -b feature/amazing-feature`）
+3. 変更をコミット（`git commit -m 'Add amazing feature'`）
+4. ブランチにプッシュ（`git push origin feature/amazing-feature`）
+5. プルリクエストを開く
 
-### Development Guidelines
-- Follow existing code style
-- Add comments for complex logic
-- Test on multiple browsers
-- Ensure responsive design
-- Update documentation
+### 開発ガイドライン
+- 既存のコードスタイルに従う
+- 複雑なロジックにコメントを追加
+- 複数のブラウザでテスト
+- レスポンシブデザインを確保
+- ドキュメントを更新
 
-## 📝 License
+## 📝 ライセンス
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+このプロジェクトはMITライセンスの下でライセンスされています - 詳細は[LICENSE](LICENSE)ファイルを参照してください。
 
-## 🙏 Acknowledgments
+## 🙏 謝辞
 
-- **Inter Font** - Beautiful typography
-- **Font Awesome** - Professional icons
-- **CSS Grid & Flexbox** - Modern layout capabilities
-- **Local Storage API** - Client-side data persistence
+- **Interフォント** - 美しいタイポグラフィ
+- **Font Awesome** - プロフェッショナルなアイコン
+- **CSS Grid & Flexbox** - モダンレイアウト機能
+- **Local Storage API** - クライアントサイドデータ永続化
 
-## 📞 Support
+## 📞 サポート
 
-- **Issues**: [GitHub Issues](https://github.com/yourusername/inventory/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/inventory/discussions)
-- **Email**: your.email@example.com
+- **課題**: [GitHub Issues](https://github.com/yourusername/inventory/issues)
+- **ディスカッション**: [GitHub Discussions](https://github.com/yourusername/inventory/discussions)
+- **メール**: your.email@example.com
 
-## 🗺️ Roadmap
+## 🗺️ ロードマップ
 
-- [ ] **v1.1**: Barcode scanning support
-- [ ] **v1.2**: Multi-location inventory
-- [ ] **v1.3**: Reporting and analytics
-- [ ] **v1.4**: API integration
-- [ ] **v1.5**: Team collaboration features
+- [ ] **v1.1**: バーコードスキャン対応
+- [ ] **v1.2**: 複数拠点在庫
+- [ ] **v1.3**: レポートと分析
+- [ ] **v1.4**: API統合
+- [ ] **v1.5**: チームコラボレーション機能
 
 ---
 
 <div align="center">
 
-**Built with ❤️ for efficient inventory management**
+**効率的な在庫管理のために❤️をこめて作られました**
 
-[Demo](https://yourusername.github.io/inventory) • [Documentation](https://github.com/yourusername/inventory/wiki) • [Report Bug](https://github.com/yourusername/inventory/issues)
+[デモ](https://yourusername.github.io/inventory) • [ドキュメント](https://github.com/yourusername/inventory/wiki) • [バグ報告](https://github.com/yourusername/inventory/issues)
 
-</div> 
+</div>
