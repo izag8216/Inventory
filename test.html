@@ -3,30 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <title>Minimalist Landing Page</title>
   <style>
     :root {
       --primary: #2d3748;
       --accent: #3182ce;
       --light: #f7fafc;
+      --secondary: #4a5568;
+      --gradient-start: #7928CA;
+      --gradient-end: #FF0080;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
 
     body,
     html {
       height: 100%;
-      background: var(--light);
+      background: linear-gradient(135deg, var(--light) 0%, #e9effd 100%);
       color: var(--primary);
       line-height: 1.5;
     }
 
     .hero {
+      position: relative;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -34,6 +39,35 @@
       text-align: center;
       height: 100vh;
       padding: 0 1rem;
+      background: radial-gradient(circle at 10% 20%, var(--gradient-start) 0%, var(--gradient-end) 100%);
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.6;
+      z-index: -1;
+    }
+
+    .hero::before {
+      width: 400px;
+      height: 400px;
+      background: var(--gradient-start);
+      top: -100px;
+      left: -100px;
+    }
+
+    .hero::after {
+      width: 500px;
+      height: 500px;
+      background: var(--gradient-end);
+      bottom: -150px;
+      right: -150px;
     }
 
     h1 {
@@ -66,13 +100,92 @@
     }
 
     footer {
-      position: fixed;
-      bottom: 1rem;
-      left: 0;
-      right: 0;
+      position: static;
+      padding: 2rem 1rem;
+      background: var(--primary);
+      color: #fff;
+    }
+
+    section {
+      padding: 6rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 600;
       text-align: center;
-      font-size: 0.875rem;
-      color: #718096;
+      margin-bottom: 3rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .card h3 {
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: var(--secondary);
+    }
+
+    .testimonials {
+      background: #fff;
+      border-radius: 1rem;
+    }
+
+    blockquote {
+      margin: 0;
+      padding: 2rem;
+      font-style: italic;
+      position: relative;
+    }
+
+    blockquote::before {
+      content: "\201C";
+      position: absolute;
+      top: -10px;
+      left: 10px;
+      font-size: 6rem;
+      opacity: 0.1;
+    }
+
+    blockquote cite {
+      display: block;
+      margin-top: 1.5rem;
+      font-style: normal;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.6s ease;
     }
   </style>
 </head>
@@ -80,13 +193,77 @@
   <main class="hero">
     <h1>Welcome to Minimal</h1>
     <p>A clean and simple landing page to get you started quickly. Build, launch, and grow with<br />focus and clarity.</p>
-    <button class="cta" onclick="alert('Thanks for clicking!')">Get Started</button>
+    <button class="cta">Get Started</button>
   </main>
+
+  <!-- Features Section -->
+  <section id="features" class="reveal">
+    <h2 class="section-title">Features</h2>
+    <div class="features-grid">
+      <div class="card">
+        <h3>Fast Performance</h3>
+        <p>Sleek and super-fast load times so your users won't wait.</p>
+      </div>
+      <div class="card">
+        <h3>Responsive Design</h3>
+        <p>Looks great on every device from phones to desktops.</p>
+      </div>
+      <div class="card">
+        <h3>Clean Code</h3>
+        <p>Structured, modular and easy to maintain codebase.</p>
+      </div>
+      <div class="card">
+        <h3>Modern Aesthetics</h3>
+        <p>Elegant visuals with a touch of minimalism.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image Showcase Section -->
+  <section id="showcase" class="reveal">
+    <h2 class="section-title">Image Showcase</h2>
+    <div class="features-grid">
+      <div class="card" style="height:160px; background:url('https://picsum.photos/300?random=1') center/cover"></div>
+      <div class="card" style="height:160px; background:url('https://picsum.photos/300?random=2') center/cover"></div>
+      <div class="card" style="height:160px; background:url('https://picsum.photos/300?random=3') center/cover"></div>
+      <div class="card" style="height:160px; background:url('https://picsum.photos/300?random=4') center/cover"></div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="reveal testimonials">
+    <h2 class="section-title">What People Say</h2>
+    <blockquote>
+      "This template blew my mind! It's so easy to work with and looks amazing."
+      <cite>— Jane Doe, Product Designer</cite>
+    </blockquote>
+  </section>
+
+  <!-- Call-to-Action Section -->
+  <section id="cta" class="reveal" style="text-align:center;">
+    <h2 class="section-title">Ready to dive in?</h2>
+    <button class="cta">Get Started</button>
+  </section>
+
   <footer>&copy; <span id="year"></span> Minimal Inc.</footer>
 
   <script>
     // Update the footer year automatically
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Lightweight scroll-reveal effect
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
   </script>
 </body>
 </html>
