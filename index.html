@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1><i class="fas fa-boxes"></i> Inventory Management System</h1>
+                <div class="header-controls">
+                    <button id="themeToggle" class="theme-toggle" title="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <!-- Add Item Form -->
+            <section class="add-section">
+                <h2><i class="fas fa-plus-circle"></i> Add Product</h2>
+                <form id="addItemForm" class="add-form">
+                    <div class="form-group">
+                        <label for="itemName">Product Name</label>
+                        <input type="text" id="itemName" name="itemName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="itemCategory">Category</label>
+                        <input type="text" id="itemCategory" name="itemCategory" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="itemQuantity">Quantity</label>
+                        <input type="number" id="itemQuantity" name="itemQuantity" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="itemPrice">Unit Price ($)</label>
+                        <input type="number" id="itemPrice" name="itemPrice" min="0" step="0.01" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Add
+                    </button>
+                </form>
+            </section>
+
+            <!-- Search & Filter -->
+            <section class="search-section">
+                <div class="search-controls">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Search by product name...">
+                    </div>
+                    <select id="categoryFilter">
+                        <option value="">All Categories</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- Inventory List -->
+            <section class="inventory-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-list"></i> Inventory List</h2>
+                    <div class="stats">
+                        <span class="stat">
+                            <i class="fas fa-box"></i>
+                            Total Items: <span id="totalItems">0</span>
+                        </span>
+                        <span class="stat">
+                            <i class="fas fa-dollar-sign"></i>
+                            Total Value: <span id="totalValue">$0</span>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="table-container">
+                    <table id="inventoryTable" class="inventory-table">
+                        <thead>
+                            <tr>
+                                <th>Product Name</th>
+                                <th>Category</th>
+                                <th>Quantity</th>
+                                <th>Unit Price</th>
+                                <th>Total Price</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="inventoryTableBody">
+                            <!-- Dynamically generated -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="emptyState" class="empty-state" style="display: none;">
+                    <i class="fas fa-box-open"></i>
+                    <h3>No inventory items</h3>
+                    <p>Add products using the form above.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-edit"></i> Edit Product</h3>
+                <button class="modal-close" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="editItemForm" class="edit-form">
+                <input type="hidden" id="editItemId">
+                <div class="form-group">
+                    <label for="editItemName">Product Name</label>
+                    <input type="text" id="editItemName" name="itemName" required>
+                </div>
+                <div class="form-group">
+                    <label for="editItemCategory">Category</label>
+                    <input type="text" id="editItemCategory" name="itemCategory" required>
+                </div>
+                <div class="form-group">
+                    <label for="editItemQuantity">Quantity</label>
+                    <input type="number" id="editItemQuantity" name="itemQuantity" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="editItemPrice">Unit Price ($)</label>
+                    <input type="number" id="editItemPrice" name="itemPrice" min="0" step="0.01" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelEdit">
+                        Cancel
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Save
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
